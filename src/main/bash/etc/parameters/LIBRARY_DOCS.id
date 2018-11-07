@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+##
+## Identity for parameter LIBRARY_DOCS
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+DESCRIPTION="home directory for library documents"
+DEFAULT_VALUE=
+
+IS_DIRECTORY=yes

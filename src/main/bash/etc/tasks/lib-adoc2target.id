@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+##
+## Identity for task lib-adoc2target
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=la2t
+MODES="build"
+DESCRIPTION="converts ADOC to targets, e.g. HTML and PDF"
+
+TaskRequire $ID dep asciidoctor
+TaskRequire $ID dep asciidoctor-pdf
+
+TaskRequire $ID param LIBRARY_DOCS
+TaskRequire $ID param LIBRARY_HOME opt
+
+TaskRequire $ID param TARGET
