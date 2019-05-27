@@ -1,0 +1,30 @@
+#! /bin/sh
+echo  "*************skb-dashboard postrm************"
+echo  "arguments $*"
+echo  "*********************************************"
+
+# Check for debian upgrade case which calls postrm, in which we do nothing
+if [ "$1" = "upgrade" ]; then
+    exit 0
+fi
+
+
+if [ ! -d "/opt/skb" ]; then
+    if getent passwd "skbuser" >/dev/null 2>&1
+    then
+        echo " ==> deleting user skbuser"
+        userdel skbuser
+    fi
+
+    if getent group "skbuser" >/dev/null 2>&1
+    then
+        echo " ==> deleting group skbuser"
+        groupdel skbuser
+    fi
+
+    echo " ==> done"
+fi
+
+if [ -d "/var/cache/skb-dashboard" ]; then
+    rm -fr /var/cache/skb-dashboard
+fi

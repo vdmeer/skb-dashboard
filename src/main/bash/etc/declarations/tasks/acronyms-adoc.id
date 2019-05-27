@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+##
+## Identity for task acronyms-adoc
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=acradoc
+MODES="build"
+MODE_FLAVOR="std"
+DESCRIPTION="converts ADOC to targets"
+
+TaskRequire $ID dep asciidoctor
+
+TaskRequire $ID param ACRONYM_DOCS
+
+TaskRequire $ID param TARGET

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+##
+## Identity for task acronyms-latex
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=acrltx
+MODES="build use"
+MODE_FLAVOR="std"
+DESCRIPTION="processes SKB acronyms to build LaTeX file"
+
+TaskRequire $ID dep pyyaml
+
+TaskRequire $ID param ACRONYM_YAML
+
+TaskRequire $ID param LATEX_AUX opt
+TaskRequire $ID param ACRONYM_LATEX_FILE opt

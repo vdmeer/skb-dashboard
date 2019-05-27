@@ -1,0 +1,26 @@
+#! /bin/sh
+echo  "************skb-dashboard postinst***********"
+echo  "arguments $*"
+echo  "*********************************************"
+
+# Check for debian abort-remove case which calls postinst, in which we do nothing
+if [ "$1" = "abort-remove" ]; then
+    exit 0
+fi
+
+
+#if ! getent group "skbuser" >/dev/null 2>&1
+#then
+#    echo "creating group skbuser . . ."
+#    groupadd skbuser
+#fi
+
+#if ! getent passwd "skbuser" >/dev/null 2>&1
+#then
+#    echo "creating user skbuser . . ."
+#    useradd -g skbuser skbuser --system
+#    usermod -a -G skbuser skbuser
+#fi
+
+chown -R skbuser:skbuser /opt/skb/skb-dashboard
+chown -R skbuser:skbuser /var/cache/skb-dashboard

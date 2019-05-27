@@ -17,20 +17,3 @@ if [ -d /tmp/skb-dashboard ]; then
 fi
 
 mkdir -p /usr/local/share/man/man1/
-
-if ! getent group "skbuser" >/dev/null 2>&1
-then
-    echo "creating group skbuser . . ."
-    groupadd skbuser
-fi
-
-if ! getent passwd "skbuser" >/dev/null 2>&1
-then
-    echo "creating user skbuser . . ."
-    useradd -g skbuser skbuser
-    usermod -a -G skbuser skbuser
-fi
-
-# Create the skbuser home directory
-mkdir -p /home/skbuser
-chown -R skbuser:skbuser /home/skbuser

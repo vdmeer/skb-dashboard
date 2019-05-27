@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+##
+## Identity for task library-ext
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=libext
+MODES="build"
+MODE_FLAVOR="std"
+DESCRIPTION="extracts ADOC, BIB and Biblatec from library YAML sources"
+
+TaskRequire $ID dep pyyaml
+
+TaskRequire $ID param LIBRARY_YAML
+TaskRequire $ID param LIBRARY_URL opt
+TaskRequire $ID param LIBRARY_HOME opt
+
+TaskRequire $ID param TARGET

@@ -1,0 +1,13 @@
+Source: skb-dashboard
+Section: misc
+Priority: optional
+Maintainer: Sven van der Meer <vdmeer.sven@mykolab.com>
+Homepage: https://vdmeer.github.io/skb/dashboard/
+Standards-Version: 4.1.2
+Build-Depends: debhelper (>= 10)
+
+Package: skb-dashboard
+Architecture: all
+Depends: bash (>= 4), bc, sed, skb-framework (>= 0.0.4)
+Description: skb-dashboard
+ Dashboard for the SKB repository: library, acronyms, etc, based on the SKB-Framework. 

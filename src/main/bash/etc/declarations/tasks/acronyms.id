@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+##
+## Identity for task acronyms
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=acr
+MODES="build use"
+MODE_FLAVOR="std"
+DESCRIPTION="finds SKB acronyms in YAML files"
+
+TaskRequire $ID dep pyyaml
+
+TaskRequire $ID param ACRONYM_YAML

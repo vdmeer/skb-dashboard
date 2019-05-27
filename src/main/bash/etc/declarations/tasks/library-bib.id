@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+##
+## Identity for task library-bib
+##
+## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
+## @version    v0.0.0
+##
+
+SHORT=libbib
+MODES="build use"
+MODE_FLAVOR="std"
+DESCRIPTION="processes SKB library to build BIB file"
+
+TaskRequire $ID param LIBRARY_YAML
+
+TaskRequire $ID param LATEX_AUX opt
+TaskRequire $ID param LIBRARY_BIB_FILE opt

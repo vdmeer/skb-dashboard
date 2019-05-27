@@ -26,35 +26,3 @@ rm -fr /opt/skb/dashboard
 
 echo " ==> removing /var/cache/skb-dashboard"
 rm -fr /var/cache/skb-dashboard
-
-if [ -d "/opt/skb" ]; then
-    echo " ==> found /opt/skb"
-
-    if [ "`ls /opt/skb | wc -l`" != "0" ]; then
-        echo " ==> none empty /opt/skb - leaving directory/group/user"
-    else
-        echo " ==> empty /opt/skb - removing directory/group/user"
-
-        echo " ==> removing /opt/skb"
-        rmdir /opt/skb/
-
-        if [ -e "/home/skbuser" ]; then
-            echo " ==> removing /home/skbuser"
-            rm -fr /home/skbuser
-        fi
-
-        if getent passwd "skbuser" >/dev/null 2>&1
-        then
-            echo " ==> deleting user skbuser"
-            userdel skbuser
-        fi
-
-        if getent group "skbuser" >/dev/null 2>&1
-        then
-            echo " ==> deleting group skbuser"
-            groupdel skbuser
-        fi
-
-        echo " ==> done"
-    fi
-fi

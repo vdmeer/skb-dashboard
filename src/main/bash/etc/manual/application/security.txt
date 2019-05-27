@@ -4,4 +4,3 @@
     target directory, which will be run if  requested.  Therefore,  this  tool
     should be used with care, probably by a dedicated user with limited access
     rights on the underlying operating system.                                
-                                                                              

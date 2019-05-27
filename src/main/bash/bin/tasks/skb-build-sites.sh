@@ -21,7 +21,7 @@
 #-------------------------------------------------------------------------------
 
 ##
-## lib-yaml2src - converts YAML to ADCo, BiBTeX, and Biblatex sources
+## skb-build-sites - builds the SKB Maven web sites
 ##
 ## @author     Sven van der Meer <vdmeer.sven@mykolab.com>
 ## @version    v0.0.0
@@ -52,16 +52,16 @@ CONFIG_MAP["RUNNING_IN"]="task"
 ## load main functions
 ## - reset errors and warnings
 ##
-source $FW_HOME/bin/functions/_include
+source $FW_HOME/bin/api/_include
 ConsoleResetErrors
 ConsoleResetWarnings
 
 
-ConsoleInfo "  -->" "bss: starting task"
+ConsoleInfo "  -->" "sbs: starting task"
 
-export SKB_LIBRARY_DOCS=$(PathToCygwin ${CONFIG_MAP["LIBRARY_DOCS"]})
-export SKB_LIBRARY_ADOC=$(PathToCygwin ${CONFIG_MAP["TARGET"]}/library)
+export SKB_LIBRARY_DOCS=$(PathToSystemPath ${CONFIG_MAP["LIBRARY_DOCS"]})
+export SKB_LIBRARY_ADOC=$(PathToSystemPath ${CONFIG_MAP["TARGET"]}/library)
 ${DMAP_TASK_EXEC["build-mvn-site"]} $*
 
-ConsoleInfo "  -->" "bss: done"
+ConsoleInfo "  -->" "sbs: done"
 exit $TASK_ERRORS
